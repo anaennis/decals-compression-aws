@@ -1,0 +1,43 @@
+# Data and build artifacts
+work/
+*.fits
+*.fits.fz
+*.zip
+layer/
+lambda-build/
+build/
+
+# Generated results / Athena query downloads
+compression_results*.csv
+manifests/
+manifests-lambda/
+/[0-9a-f]*-[0-9a-f]*-[0-9a-f]*-[0-9a-f]*-[0-9a-f]*.csv
+
+# Original pre-refactor scripts (kept locally for scripts/compare_with_original.py)
+legacy/
+
+# Rendered deployment configs (commit only the *.template / placeholder versions)
+infra/notification.json
+
+# AWS credentials and config: never commit
+.aws/
+credentials
+*.pem
+*.key
+.env
+.env.*
+aws-exports.*
+*.credentials.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+*.egg-info/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

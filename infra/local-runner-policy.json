@@ -1,0 +1,15 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "UploadLocalRunResults",
+      "Effect": "Allow",
+      "Action": "s3:PutObject",
+      "Resource": [
+        "arn:aws:s3:::BUCKET_NAME/compression-test/*",
+        "arn:aws:s3:::BUCKET_NAME/manifests/*",
+        "arn:aws:s3:::BUCKET_NAME/source/*"
+      ]
+    }
+  ]
+}

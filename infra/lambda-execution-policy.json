@@ -1,0 +1,30 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ReadSourceCutouts",
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::BUCKET_NAME/source/*"
+    },
+    {
+      "Sid": "WriteCompressedFilesAndManifests",
+      "Effect": "Allow",
+      "Action": "s3:PutObject",
+      "Resource": [
+        "arn:aws:s3:::BUCKET_NAME/compression-test/*",
+        "arn:aws:s3:::BUCKET_NAME/manifests-lambda/*"
+      ]
+    },
+    {
+      "Sid": "CloudWatchLogs",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "arn:aws:logs:REGION:ACCOUNT_ID:log-group:/aws/lambda/FUNCTION_NAME:*"
+    }
+  ]
+}
